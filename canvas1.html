@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<style>
+*
+{
+background-color:steelblue;
+}
+canvas{
+width:400px;
+height:400px;
+border:3px dotted white;
+margin:0px 0px 0px 240px;
+}
+#dra{
+margin:0px 0px 0px 280px;
+font-size:17px;
+color:white;
+}
+#lef{
+font-size:17px;
+color:white;
+}
+#rig{
+font-size:17px;
+color:white;
+}
+#rem{
+font-size:17px;
+color:white;
+}
+</style>
+<body>
+
+<button onclick="drawRect(x,y,w,h)" id="dra">Draw</button>
+<button onclick="sleft()" id="lef">Shift Left</button>
+<button onclick="sright()" id="rig">Shift Right</button>
+<button onclick="rem()" id="rem">Remove</button> <br></br>
+
+<canvas id="myCanvas"></canvas>
+<script>
+cn = document.getElementById('myCanvas'),
+c = cn.getContext('2d'),
+x = 60,
+y = 10,
+w = 150,
+h = 50;	
+function drawRect(x,y,w,h) 
+{
+	c.clearRect(0,0, 500, 500);
+    c.fillStyle = 'ORANGE';
+    c.fillRect(x, y, w, h);
+}
+function sleft() 
+{
+	x--;	
+	drawRect(x,y,w,h);
+}
+function sright() 
+{
+	x++;
+	drawRect(x,y,w,h);
+}
+function rem() {   
+    c.clearRect(0,0, 500, 500);
+}
+</script>
